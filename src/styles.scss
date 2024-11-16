@@ -1,0 +1,18 @@
+@use '../public/fonts/fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'OpenSansHebrew';
+  direction: rtl;
+  overflow-x: hidden;
+  background: linear-gradient(
+    90deg,
+    hsla(31, 32%, 75%, 1) 0%,
+    hsla(33, 41%, 86%, 1) 50%,
+    hsla(32, 40%, 86%, 1) 85%,
+    hsla(32, 34%, 77%, 1) 100%
+  );
+}

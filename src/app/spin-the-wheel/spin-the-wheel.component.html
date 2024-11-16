@@ -1,0 +1,78 @@
+<div class="tw-relative tw-mx-auto tw-w-[min(100vw,100svh)] tw-overflow-hidden">
+  <div
+    #wheel
+    class="tw-aspect-square tw-w-full tw-overflow-hidden tw-rounded-full tw-border-2 tw-border-black tw-bg-red-100"
+  >
+    <div
+      style="--rotate: 0deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-drop-shadow-2xl tw-transition-all tw-duration-[2000ms]"
+      [ngClass]="{
+        'tw-brightness-50': !wonEp1200(),
+        'tw-brightness-150': wonEp1200(),
+      }"
+    >
+      <img
+        src="images/ep1200.png"
+        class="tw-absolute -tw-left-[1%] tw-bottom-[7%] tw-h-1/4 tw-rotate-45"
+      />
+    </div>
+    <div
+      style="--rotate: 60deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-brightness-50 tw-drop-shadow-2xl"
+    >
+      <img
+        src="images/dreame-bot-d9-plus.jpg"
+        class="tw-absolute tw-bottom-[3%] tw-left-[6%] tw-h-[27%] tw-rotate-[59deg]"
+      />
+    </div>
+    <div
+      style="--rotate: 120deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-brightness-50 tw-drop-shadow-2xl"
+    >
+      <img
+        src="images/amgazit-carmel-50000-btu.jpg"
+        class="tw-absolute tw-bottom-[4%] tw-left-[2%] tw-h-[27%] tw-rotate-[50deg]"
+      />
+    </div>
+    <div
+      style="--rotate: 180deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-brightness-50 tw-drop-shadow-2xl"
+    >
+      <img
+        src="images/hameigaash.webp"
+        class="tw-absolute tw-bottom-[6%] tw-left-[2%] tw-h-[24%] tw-rotate-[48deg]"
+      />
+    </div>
+    <div
+      style="--rotate: 240deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-brightness-50 tw-drop-shadow-2xl"
+    >
+      <img
+        src="images/walking-pad-k12.jpg"
+        class="tw-absolute tw-bottom-[5%] tw-left-[4%] tw-h-[27%] tw-rotate-[48deg]"
+      />
+    </div>
+    <div
+      style="--rotate: 300deg; --skew-y: -30deg"
+      class="tw-absolute -tw-right-1/2 -tw-top-1/2 tw-h-full tw-w-full tw-origin-[0%_100%] tw-rotate-[var(--rotate)] tw-skew-y-[var(--skew-y)] tw-overflow-hidden tw-border-[1px] tw-border-black tw-bg-white tw-brightness-50 tw-drop-shadow-2xl"
+    >
+      <img
+        src="images/buyme.png"
+        class="tw-absolute tw-bottom-[6%] tw-left-[4%] tw-h-[24%] tw-rotate-[48deg]"
+      />
+    </div>
+  </div>
+
+  <img
+    src="images/arrow-up.svg"
+    class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-100 -tw-translate-x-1/2 tw-translate-y-[calc(-50%-130px)]"
+  />
+
+  <button
+    [disabled]="disabled()"
+    (click)="spinWheel()"
+    class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-200 -tw-translate-x-1/2 -tw-translate-y-1/2 tw-overflow-hidden tw-rounded-full tw-transition-all tw-duration-700 hover:[&:not(:disabled)]:tw-scale-110"
+  >
+    <img src="images/wheel-start-button.png" />
+  </button>
+</div>
