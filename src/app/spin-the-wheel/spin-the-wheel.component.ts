@@ -42,7 +42,7 @@ export class SpinTheWheelComponent implements AfterViewInit {
 
     gsap.to(wheel, {
       rotation: `+=${fullSpinDegrees}`, // 10 full spins (10 * 360)
-      duration: 30, // Duration of the animation
+      duration: 20, // Duration of the animation
       ease: 'power1.out', // Ease out for a realistic slowing effect
       onUpdate: () => {
         // Get current rotation
