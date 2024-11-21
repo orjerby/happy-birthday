@@ -7,12 +7,17 @@ import {
   viewChild,
   viewChildren,
 } from '@angular/core'
-import gsap from 'gsap'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { HeartSvgComponent } from '../heart-svg/heart-svg.component'
+import { LetterComponent } from '../letter/letter.component'
+
+gsap.registerPlugin(ScrollTrigger)
 
 @Component({
   selector: 'app-blessing',
   standalone: true,
-  imports: [],
+  imports: [LetterComponent, HeartSvgComponent],
   templateUrl: './blessing.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -26,6 +31,7 @@ export class BlessingComponent {
   )
   videos = viewChildren<ElementRef<HTMLVideoElement>>('vid')
   movingSectionsGap = signal<number>(0)
+  letter = viewChild<LetterComponent>('letter')
 
   ngAfterViewInit(): void {
     this.setMovingSectionsGap()
@@ -39,6 +45,7 @@ export class BlessingComponent {
 
   public animate() {
     this.animateMovingSections()
+    this.letter()?.animate()
   }
 
   private prepareMovingSections() {
